@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear facturas con HTML, CSS y JavaScript</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<div class="control-bar">
+  <div class="container">
+    <div class="row">
+      <div class="col-2-4">
+        <div class="slogan">Facturación </div>
+
+        <label for="config_tax">IVA:
+          <input type="checkbox" id="config_tax" />
+        </label>
+        <label for="config_tax_rate" class="taxrelated">Tasa:
+          <input type="text" id="config_tax_rate" value="13"/>%
+        </label>
+        <label for="config_note">Nota:
+          <input type="checkbox" id="config_note" />
+        </label>
+        
+      </div>
+      <div class="col-4 text-right">
+        <a href="javascript:window.print()">Imprimir</a>
+      </div><!--.col-->
+    </div><!--.row-->
+  </div><!--.container-->
+</div><!--.control-bar-->
+
+<header class="row">
+  <div class="logoholder text-center">
+    <img src="assets/img/logo.png" class="small-logo">
+  </div><!--.logoholder-->
+
+  <div class="info">
+    <p contenteditable>
+      E-mail: <a href="mailto:dmfigue07@gmail.com">dmfigue07@gmail.com"</a><br>
+      Tel: +502<br>
+      IG: Dm_figue
+    </p>
+  </div><!-- .info -->
+
+  <div class="me">
+    <p contenteditable>
+      <strong>Sistema de Daniel</strong><br>
+      <br>
+      Ciudad de Guatemala<br>
+    </p>
+  </div><!--.me-->
+</header>
+
+  <div class="bank">
+    <p contenteditable>
+      Nombre del banco (PAGO): <br>
+      Numero de la cuenta: <br>
+
+    </p>
+  </div><!--.bank-->
+
+</header>
+
+
+<div class="row section">
+
+    <div class="col-2">
+    <h1 contenteditable style="font-family: 'Georgia'">Factura De Ventas San Martín</h1>
+  </div><!--.col-->
+
+ <div class="col-2 text-right details no-edit">
+  <p>
+    Fecha de la factura: <input type="text" class="datePicker" readonly /><br>
+    Factura #: <input type="text" value="100" readonly /><br>
+    Vencimiento de la factura: <input class="twoweeks" type="text" readonly />
+  </p>
+</div><!--.col-->
+
+<style>
+  /* Bloquea la edición del contenido */
+  .no-edit {
+    pointer-events: none; /* Deshabilita clics y eventos */
+    user-select: none;    /* Evita selección de texto */
+  }
+
+  /* Permitir que los campos input solo muestren el valor sin interacción */
+  .no-edit input {
+    pointer-events: auto; /* Habilitar eventos para los inputs */
+    user-select: text;    /* Permitir selección del contenido */
+    background-color: #f0f0f0; /* Opcional: Cambia color para indicar que es solo lectura */
+  }
+</style>
+
+  
+  
+  <div class="col-2">
+    
+
+    <p contenteditable class="client">
+      <strong>Facturar a</strong><br>
+      [Nombre cliente]<br>
+      [San Martin]<br>
+      [Dirección empresa]<br>
+      [Numero del cliente]
+    </p>
+  </div><!--.col-->
+  
+  
+  <div class="col-2">
+   
+
+    <p contenteditable class="client">
+      <strong>Enviar a</strong><br>
+      [Nombre cliente]<br>
+      [Nombre emmpresa]<br>
+      [Dirección empresa]<br>
+      [Tel empresa]
+    </p>
+  </div><!--.col-->
+
+  
+
+</div><!--.row-->
+
+<div class="row section" style="margin-top:-1rem">
+  <div class="col-1">
+    <table style="width:100%">
+      <thead class="no-edit">
+        <tr class="invoice_detail">
+          <th width="25%" style="text-align">Vendedor</th>
+          <th width="25%">Orden de compra</th>
+          <th width="20%">Enviar por</th>
+          <th width="30%">Términos y condiciones</th>
+        </tr>
+      </thead>
+      <tbody class="no-edit">
+        <tr class="invoice_detail">
+          <td width="25%" style="text-align">Figueroa</td>
+          <td width="25%">#01018</td>
+          <td width="20%">CF</td>
+          <td width="30%">Pago al contado</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<style>
+  /* Bloquea la edición y la selección de contenido */
+  .no-edit {
+    pointer-events: none; /* Deshabilita clics y eventos */
+    user-select: none;    /* Evita la selección de texto */
+  }
+</style>
+
+<div class="invoicelist-body">
+  <table>
+<thead class="no-edit">
+  <th width="5%">Código del producto</th>
+  <th width="60%">Descripción</th>
+  <th width="10%">Cant.</th>
+  <th width="15%">Precio (Q)</th>
+  <th class="taxrelated">IVA</th>
+  <th width="10%">Total (Q)</th>
+</thead>
+
+<style>
+  .no-edit {
+    pointer-events: none; /* Bloquea clics y eventos */
+    user-select: none;    /* Deshabilita la selección de texto */
+  }
+</style
+    <tbody>
+      <!-- Producto 1: Pan -->
+      <tr>
+        <td width='5%'><a class="control removeRow" href="#">x</a> <span contenteditable>00001</span></td>
+        <td width='60%'><span contenteditable>Pan Francés</span></td>
+        <td class="amount"><input type="text" value="10"/></td>
+        <td class="rate"><input type="text" value="2" /></td>
+        <td class="tax taxrelated"></td>
+        <td class="sum"></td>
+      </tr>
+      <!-- Producto 2: Postre -->
+      <tr>
+        <td width='5%'><a class="control removeRow" href="#">x</a> <span contenteditable>00002</span></td>
+        <td width='60%'><span contenteditable>Cheesecake de Fresa</span></td>
+        <td class="amount"><input type="text" value="1"/></td>
+        <td class="rate"><input type="text" value="25" /></td>
+        <td class="tax taxrelated"></td>
+        <td class="sum"></td>
+      </tr>
+      <!-- Producto 3: Comida Restaurante -->
+      <tr>
+        <td width='5%'><a class="control removeRow" href="#">x</a> <span contenteditable>00003</span></td>
+        <td width='60%'><span contenteditable>Desayuno Chapín</span></td>
+        <td class="amount"><input type="text" value="2"/></td>
+        <td class="rate"><input type="text" value="40" /></td>
+        <td class="tax taxrelated"></td>
+        <td class="sum"></td>
+      </tr>
+      <!-- Producto 4: Bebida -->
+      <tr>
+        <td width='5%'><a class="control removeRow" href="#">x</a> <span contenteditable>00004</span></td>
+        <td width='60%'><span contenteditable>Café Americano</span></td>
+        <td class="amount"><input type="text" value="3"/></td>
+        <td class="rate"><input type="text" value="15" /></td>
+        <td class="tax taxrelated"></td>
+        <td class="sum"></td>
+      </tr>
+    </tbody>
+  </table>
+  <a class="control newRow" href="#">+ Nueva fila</a>
+</div><!--.invoice-body-->
+
+
+<div class="invoicelist-footer">
+  <table class="no-edit">
+    <tr class="taxrelated">
+      <td>IVA:</td>
+      <td id="total_tax"></td>
+    </tr>
+    <tr>  
+      <td><strong>Total:</strong></td>
+      <td id="total_price"></td>
+    </tr>
+  </table>
+</div>
+
+<style>
+  .no-edit {
+    pointer-events: none; /* Bloquea clics y eventos */
+    user-select: none; /* Deshabilita la selección de texto */
+  }
+</style>
+
+<footer class="row">
+  <div class="col-1 text-center">
+    <p class="notaxrelated" contenteditable>Muchas Gracias por su compra</p>
+    
+  </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/bower_components/jquery/dist/jquery.min.js"><\/script>')</script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
